@@ -53,6 +53,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
     const id = params?.id;
     const { data } = await apolloClient.query({ query: GET_USERS });
+    console.log(data);
     const item = data.users.find((user) => user.id === id);
     // By returning { props: item }, the StaticPropsDetail component
     // will receive `item` as a prop at build time
